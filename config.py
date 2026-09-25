@@ -1,6 +1,6 @@
 """
 Conventions for this project:
-
+mean = 0
 """
 
 import math
