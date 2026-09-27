@@ -1,9 +1,8 @@
 import math
 import numpy as np
 
-from scipy.stats import t as t_dist
-
 from config import Config
+from estimate import var_es_from_params
 
 
 def simulate_garch_t(cfg: Config, N: int, seed: int):
@@ -29,18 +28,7 @@ def simulate_garch_t(cfg: Config, N: int, seed: int):
 
 
 def true_var_es(sigma2_next: float, cfg: Config) -> dict:
-    sigma_next = math.sqrt(sigma2_next)
-    scale = math.sqrt((cfg.nu - 2) / cfg.nu)
-
-    a_var = 1 - cfg.var_level
-    t_a_var = t_dist.ppf(a_var, df=cfg.nu)
-    var = -t_a_var * sigma_next * scale
-
-    a_es = 1 - cfg.es_level
-    t_a_es = t_dist.ppf(a_es, df=cfg.nu)
-    es = sigma_next * scale * (t_dist.pdf(t_a_es, df=cfg.nu) / a_es) * ((cfg.nu + t_a_es**2) / (cfg.nu - 1))
-
-    return {"var": var, "es": es}
+    return var_es_from_params(sigma2_next, cfg.nu, cfg)
 
 
 if __name__ == "__main__":

@@ -1,16 +1,17 @@
 from arch import arch_model
 from config import Config
 from simulate import simulate_garch_t
+from estimate import fit_garch_t, var_es_from_params
 
 
 cfg = Config()
 result = simulate_garch_t(cfg, N=500, seed=0)
 returns = result["returns"]
 
-model = arch_model(returns, mean="Zero", vol="GARCH", p=1, q=1, dist="t")
-fit_result = model.fit(disp="off")
-forecast = fit_result.forecast(horizon=1)
-sigma2_next_est = forecast.variance.values[-1, 0]
+fit_result = fit_garch_t(returns)
 
-print(fit_result.params)
-print("estimated:", sigma2_next_est, "true:", result["sigma2_next"])
+truth = var_es_from_params(fit_result["sigma2_next"], cfg.nu, cfg)
+estimate = var_es_from_params(result["sigma2_next"], cfg.nu, cfg)
+
+print("true VaR/ES:      ", truth)
+print("estimates VaR/ES: ", estimate)
