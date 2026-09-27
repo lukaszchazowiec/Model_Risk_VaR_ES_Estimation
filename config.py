@@ -1,6 +1,15 @@
 """
-Conventions for this project:
-mean = 0
+Conventions:
+- Returns in PERCENT units (target_var=1.0 ~ 1% daily vol).
+- Mean fixed at 0 (mu=0): r_t = epsilon_t.
+- Losses reported as POSITIVE numbers (VaR/ES sign-flipped accordingly).
+- alpha, beta, nu, target_var are the TRUE simulation parameters, not estimated.
+- z is standardized Student-t (unit variance): scaled by sqrt((nu-2)/nu).
+- burn_in=500 discarded per path before the kept sample starts.
+- GARCH-t simulator is handwritten (simulate.py); `arch` is used only for
+  MLE fitting from Module 2 onward.
+- Seeding: one int seed -> np.random.default_rng(seed) per path. No
+  SeedSequence spawning yet (needed once Module 4 parallelizes across R paths).
 """
 
 import math
