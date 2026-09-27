@@ -1,8 +1,9 @@
-import numpy as np
 import math
-from scipy.stats import t as t_dist
+import numpy as np
+
 from config import Config
 from simulate import true_var_es
+
 
 if __name__ == "__main__":
     cfg = Config()
@@ -25,3 +26,6 @@ if __name__ == "__main__":
     closed_form = true_var_es(sigma2_next, cfg)
     print("VaR - empirical:", empirical_var, "closed-form:", closed_form["var"])
     print("ES - empirical:", empirical_es, "closed-form:", closed_form["es"])
+
+
+
