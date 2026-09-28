@@ -7,13 +7,13 @@ from estimate import var_es_from_params
 
 def simulate_garch_t(cfg: Config, N: int, seed: int,
                      alpha: float=None, beta: float=None,
-                     omega: float=None, nu: float=None) -> dict:
+                     omega: float=None, nu: float=None, z: np.ndarray = None) -> dict:
     """
     Generate one GARCH(1,1)-t path.
 
     By default, uses the TRUE parameters stored in cfg (alpha, beta, omega, nu).
     Pass alpha/beta/omega/nu explicitly to simulate from a DIFFERENT set of
-    parameters instead (e.g. fitted parameters, for the parametric bootstrap),
+    parameters instead (e.g., fitted parameters, for the parametric bootstrap),
     while still using cfg for settings that don't change: burn_in, target_var
     (only used as the fallback/default omega source).
     """
@@ -24,11 +24,14 @@ def simulate_garch_t(cfg: Config, N: int, seed: int,
     omega = cfg.omega if omega is None else omega
     nu    = cfg.nu    if nu    is None else nu
 
-    rng = np.random.default_rng(seed)
     total_steps = cfg.burn_in + N
 
-    z_raw = rng.standard_t(df=nu, size=total_steps)
-    z = z_raw * math.sqrt((nu - 2) / nu)
+    if z is None:
+        rng = np.random.default_rng(seed)
+        z_raw = rng.standard_t(df=nu, size=total_steps)
+        z = z_raw * math.sqrt((nu - 2) / nu)
+    elif len(z) != total_steps:
+        raise ValueError(f"z must be of length burn_in + N = {total_steps}, got {len(z)}" )
 
     sigma2 = np.zeros(total_steps)
     sigma2[0] = cfg.target_var

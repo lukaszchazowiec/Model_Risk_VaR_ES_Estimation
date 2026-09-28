@@ -8,7 +8,10 @@ from config import Config
 
 
 def fit_garch_t(returns: np.ndarray) -> dict:
+    """
 
+    :rtype: dict
+    """
     model = arch_model(returns, mean="Zero", vol="GARCH", p=1, q=1, dist="t")
     fit_result = model.fit(disp="off")
     forecast = fit_result.forecast(horizon=1)
@@ -24,6 +27,14 @@ def fit_garch_t(returns: np.ndarray) -> dict:
             "std_resid": fit_result.std_resid,
             "converged": converged,
     }
+
+
+def conditional_sigma2_next(returns: np.ndarray, alpha: float, beta: float, omega: float) -> float:
+    sigma2 = returns.var()
+    for r in returns:
+        sigma2 = omega + alpha * r ** 2 + beta * sigma2
+
+    return sigma2
 
 
 def var_es_from_params(sigma2_next: float, nu: float, cfg: Config) -> dict:
