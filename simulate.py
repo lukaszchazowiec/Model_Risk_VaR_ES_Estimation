@@ -60,6 +60,7 @@ if __name__ == "__main__":
     result = simulate_garch_t(DEV, N=500, seed=1)
     print(result["returns"].shape)
     print(result["sigma2_next"])
+    print(true_var_es(result["sigma2_next"], DEV))
 
     result_override = simulate_garch_t(DEV, N=500, seed=1,
                                         alpha=0.09, beta=0.88, omega=0.02, nu=6.5)

@@ -2,7 +2,7 @@ import numpy as np
 
 from statsmodels.stats.diagnostic import acorr_ljungbox
 
-from config import Config, DEV
+from config import Config
 from simulate import simulate_garch_t
 from estimate import fit_garch_t
 
