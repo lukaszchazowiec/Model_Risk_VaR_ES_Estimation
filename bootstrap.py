@@ -68,7 +68,8 @@ def residual_bootstrap(returns: np.ndarray, fit_result: dict, N: int, cfg: Confi
 
     for i in range(cfg.B):
         rng = np.random.default_rng(child_seeds[i])
-        z_star = rng.choice(fit_result["std_resid"], size=N+cfg.burn_in, replace=True)
+        centered_resid = fit_result["std_resid"] - fit_result["std_resid"].mean()
+        z_star = rng.choice(centered_resid, size=N + cfg.burn_in, replace=True)
         synthetic = simulate_garch_t(cfg, N=N, seed=child_seeds[i],
                                      alpha=fit_result["alpha"],
                                      beta=fit_result["beta"],
