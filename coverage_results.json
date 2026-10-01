@@ -1,0 +1,3064 @@
+{
+  "config": {
+    "alpha": 0.08,
+    "beta": 0.9,
+    "nu": 6.0,
+    "seed": 42,
+    "target_var": 1.0,
+    "R": 500,
+    "B": 100,
+    "burn_in": 500,
+    "sample_sizes": [
+      500,
+      1000,
+      2500
+    ],
+    "var_level": 0.99,
+    "es_level": 0.975,
+    "ci_level": 0.95,
+    "omega": 0.020000000000000018
+  },
+  "R": 40,
+  "seed": 42,
+  "results": {
+    "500": {
+      "summary": {
+        "n_paths": 40,
+        "n_converged": 40,
+        "n_failed": 0,
+        "parametric_var_coverage": 0.925,
+        "parametric_es_coverage": 0.975,
+        "residual_var_coverage": 0.925,
+        "residual_es_coverage": 0.95
+      },
+      "raw": [
+        {
+          "converged": true,
+          "true_var": 1.9134507026242271,
+          "true_es": 1.9825459786627826,
+          "param_var_ci": [
+            1.5322399355762621,
+            1.9469129090245505
+          ],
+          "param_es_ci": [
+            1.5592855157023366,
+            2.0421494481628173
+          ],
+          "resid_var_ci": [
+            1.5649050516719174,
+            2.0124235796334813
+          ],
+          "resid_es_ci": [
+            1.5945612759977117,
+            2.0960807303626976
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.4688291062206544,
+          "true_es": 3.594089560694961,
+          "param_var_ci": [
+            2.6337285826629264,
+            4.018353773791995
+          ],
+          "param_es_ci": [
+            2.712060091377475,
+            4.237813424136062
+          ],
+          "resid_var_ci": [
+            2.799677550016564,
+            3.9092306493048885
+          ],
+          "resid_es_ci": [
+            2.8918738609318266,
+            4.139142120002172
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.7123769025623778,
+          "true_es": 1.7742113436599856,
+          "param_var_ci": [
+            1.4263213508606327,
+            2.0821532852459756
+          ],
+          "param_es_ci": [
+            1.4829438049774306,
+            2.264989461011385
+          ],
+          "resid_var_ci": [
+            1.4579853832419258,
+            2.2257601505402578
+          ],
+          "resid_es_ci": [
+            1.5082827482419356,
+            2.362209260775442
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.6136190192974413,
+          "true_es": 3.744107880752872,
+          "param_var_ci": [
+            2.489705584401923,
+            4.030794942844396
+          ],
+          "param_es_ci": [
+            2.529493160234465,
+            4.281251353553828
+          ],
+          "resid_var_ci": [
+            2.515579615223924,
+            4.0200460240206715
+          ],
+          "resid_es_ci": [
+            2.576166301027624,
+            4.218341127393222
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.164269102955441,
+          "true_es": 2.24242150629948,
+          "param_var_ci": [
+            1.451645844375999,
+            3.386790315267743
+          ],
+          "param_es_ci": [
+            1.4775591420084728,
+            3.491218921425148
+          ],
+          "resid_var_ci": [
+            1.4940150624980408,
+            2.794952263435915
+          ],
+          "resid_es_ci": [
+            1.5096011470475736,
+            2.8673266524300622
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.4333779319527613,
+          "true_es": 2.521247935441126,
+          "param_var_ci": [
+            1.94383327960452,
+            2.6991050243300485
+          ],
+          "param_es_ci": [
+            1.9899931736021808,
+            2.871320158688146
+          ],
+          "resid_var_ci": [
+            2.006890894194645,
+            2.8204428927889724
+          ],
+          "resid_es_ci": [
+            2.039925872960376,
+            3.046426927149243
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.71347247154673,
+          "true_es": 1.7753464739673908,
+          "param_var_ci": [
+            1.5607222347653331,
+            2.6114981268611124
+          ],
+          "param_es_ci": [
+            1.5891338334521503,
+            2.7329099098647465
+          ],
+          "resid_var_ci": [
+            1.580190418715313,
+            2.6765041323275156
+          ],
+          "resid_es_ci": [
+            1.6002803947547175,
+            2.783172437430844
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.4946709211929843,
+          "true_es": 2.5847542328188267,
+          "param_var_ci": [
+            1.89869113789254,
+            2.5723860762892246
+          ],
+          "param_es_ci": [
+            1.9153456251091643,
+            2.6622648686036836
+          ],
+          "resid_var_ci": [
+            1.826864644213629,
+            2.535485508703464
+          ],
+          "resid_es_ci": [
+            1.8623910427117047,
+            2.620199688779939
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.090239404204408,
+          "true_es": 2.165718573028614,
+          "param_var_ci": [
+            1.977355860027248,
+            3.0887816823709664
+          ],
+          "param_es_ci": [
+            2.007878824645722,
+            3.236063477600163
+          ],
+          "resid_var_ci": [
+            1.938408586770971,
+            2.828983154952455
+          ],
+          "resid_es_ci": [
+            1.9595785350415755,
+            2.9069041743449704
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.3985220917552255,
+          "true_es": 3.5212437389504765,
+          "param_var_ci": [
+            2.282478651331504,
+            3.6884122172625475
+          ],
+          "param_es_ci": [
+            2.3355984863590624,
+            3.8490049845486483
+          ],
+          "resid_var_ci": [
+            2.171360351431641,
+            3.6938281996594546
+          ],
+          "resid_es_ci": [
+            2.2209439655792376,
+            3.893900037303594
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.5060079106085746,
+          "true_es": 2.596500604306316,
+          "param_var_ci": [
+            1.618778236857445,
+            2.5605220408894445
+          ],
+          "param_es_ci": [
+            1.657436544329036,
+            2.6956143049101002
+          ],
+          "resid_var_ci": [
+            1.6700052458754668,
+            2.5313718933714884
+          ],
+          "resid_es_ci": [
+            1.7073710722126694,
+            2.6344315082545684
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.017128191072485,
+          "true_es": 3.1260775906676526,
+          "param_var_ci": [
+            1.7022804339559232,
+            3.0370742354260565
+          ],
+          "param_es_ci": [
+            1.7376082201260832,
+            3.188205799301559
+          ],
+          "resid_var_ci": [
+            1.8104875082905285,
+            2.938565865969974
+          ],
+          "resid_es_ci": [
+            1.851200949824069,
+            3.0330826355568514
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": false,
+          "resid_es_hit": false
+        },
+        {
+          "converged": true,
+          "true_var": 1.8894099501631385,
+          "true_es": 1.9576371074541372,
+          "param_var_ci": [
+            1.7453447385864422,
+            2.5629659924824435
+          ],
+          "param_es_ci": [
+            1.7732221989157397,
+            2.671304980219175
+          ],
+          "resid_var_ci": [
+            1.699499225277414,
+            2.5725755824327625
+          ],
+          "resid_es_ci": [
+            1.7265963496695398,
+            2.6841731403437827
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 4.748914592279055,
+          "true_es": 4.9203993157616255,
+          "param_var_ci": [
+            2.488954461591743,
+            5.0658457248896305
+          ],
+          "param_es_ci": [
+            2.5867755404375585,
+            5.475822811610294
+          ],
+          "resid_var_ci": [
+            2.029906758270335,
+            4.954058433643823
+          ],
+          "resid_es_ci": [
+            2.0933744949512065,
+            5.329952242013977
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.0100765009939257,
+          "true_es": 2.0826609634545004,
+          "param_var_ci": [
+            1.6539529473607517,
+            2.3956818425521553
+          ],
+          "param_es_ci": [
+            1.684061849222354,
+            2.484165838687055
+          ],
+          "resid_var_ci": [
+            1.6539774314403517,
+            2.401316694891061
+          ],
+          "resid_es_ci": [
+            1.6873710657517067,
+            2.519717508399417
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.654355208948689,
+          "true_es": 1.7140944693703777,
+          "param_var_ci": [
+            1.2784834449298017,
+            1.7624092187639115
+          ],
+          "param_es_ci": [
+            1.2941328086074764,
+            1.8008691864886985
+          ],
+          "resid_var_ci": [
+            1.3201449146015543,
+            2.064277093601283
+          ],
+          "resid_es_ci": [
+            1.3372372488624744,
+            2.094492291971479
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.0982627055433496,
+          "true_es": 3.210141896674787,
+          "param_var_ci": [
+            1.8827213842080028,
+            3.368820625982262
+          ],
+          "param_es_ci": [
+            1.9210961758314933,
+            3.5351756065633664
+          ],
+          "resid_var_ci": [
+            1.6353850450849923,
+            3.2786084426812603
+          ],
+          "resid_es_ci": [
+            1.6649325197213367,
+            3.3992282032854
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.8497600167879056,
+          "true_es": 1.9165554031491832,
+          "param_var_ci": [
+            1.6223290156146581,
+            2.2344771741078824
+          ],
+          "param_es_ci": [
+            1.6530716506984582,
+            2.337833598173129
+          ],
+          "resid_var_ci": [
+            1.6633263739901303,
+            2.3198236744846734
+          ],
+          "resid_es_ci": [
+            1.7094827704819662,
+            2.478779206897556
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.9529202189491237,
+          "true_es": 2.0234407510038577,
+          "param_var_ci": [
+            1.398440310570977,
+            2.1278429892117297
+          ],
+          "param_es_ci": [
+            1.420215315145284,
+            2.1754151101118575
+          ],
+          "resid_var_ci": [
+            1.4901305434695777,
+            2.0457504737962724
+          ],
+          "resid_es_ci": [
+            1.502465285022846,
+            2.088719837406329
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.4975053770109998,
+          "true_es": 1.551580743181599,
+          "param_var_ci": [
+            1.3246605360961021,
+            1.9756621360989113
+          ],
+          "param_es_ci": [
+            1.357373075580153,
+            2.0883335171750566
+          ],
+          "resid_var_ci": [
+            1.30217710987081,
+            2.0292363460095637
+          ],
+          "resid_es_ci": [
+            1.3275413092764192,
+            2.1200063382202345
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.189903505035259,
+          "true_es": 2.268981574290293,
+          "param_var_ci": [
+            1.631246041963815,
+            2.2987764182435564
+          ],
+          "param_es_ci": [
+            1.6660389565614324,
+            2.3973283560034138
+          ],
+          "resid_var_ci": [
+            1.653043597219257,
+            2.3847575430077694
+          ],
+          "resid_es_ci": [
+            1.6984873025537857,
+            2.4995085736710387
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.9228681712162525,
+          "true_es": 1.992303514856789,
+          "param_var_ci": [
+            1.729141004616395,
+            2.373055892270635
+          ],
+          "param_es_ci": [
+            1.7567665563121495,
+            2.4373863047053352
+          ],
+          "resid_var_ci": [
+            1.7556249404023827,
+            2.391239359203737
+          ],
+          "resid_es_ci": [
+            1.7801540186878169,
+            2.5156062823510132
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.062544338392925,
+          "true_es": 3.1731337286245953,
+          "param_var_ci": [
+            2.443089604711211,
+            3.285804718928613
+          ],
+          "param_es_ci": [
+            2.4761490515960936,
+            3.3861889171715527
+          ],
+          "resid_var_ci": [
+            2.4869993457424298,
+            3.254892284146477
+          ],
+          "resid_es_ci": [
+            2.5081875082328944,
+            3.3532479864488103
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 4.8081563273226315,
+          "true_es": 4.981780287541337,
+          "param_var_ci": [
+            3.518883813395782,
+            5.7511803462216875
+          ],
+          "param_es_ci": [
+            3.6296674491780325,
+            6.14482900882014
+          ],
+          "resid_var_ci": [
+            3.6242443786807494,
+            5.748404973488432
+          ],
+          "resid_es_ci": [
+            3.7418558548270338,
+            6.144879801918701
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.977739154888712,
+          "true_es": 3.0852662046296198,
+          "param_var_ci": [
+            2.9884452607159684,
+            4.661065805326892
+          ],
+          "param_es_ci": [
+            3.060032137143889,
+            5.0740653331295915
+          ],
+          "resid_var_ci": [
+            2.942420182789122,
+            4.417016916542027
+          ],
+          "resid_es_ci": [
+            3.036832674243915,
+            4.666103542687983
+          ],
+          "param_var_hit": false,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.1394293429896645,
+          "true_es": 2.2166847751866476,
+          "param_var_ci": [
+            2.0058946093105763,
+            2.6998353921671234
+          ],
+          "param_es_ci": [
+            2.03604501596734,
+            2.7790024567712375
+          ],
+          "resid_var_ci": [
+            2.0834868828219024,
+            2.782431960582722
+          ],
+          "resid_es_ci": [
+            2.1239889101643095,
+            2.878201957828223
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.3886952212791415,
+          "true_es": 2.474951718747252,
+          "param_var_ci": [
+            2.097208004660841,
+            2.819705377006436
+          ],
+          "param_es_ci": [
+            2.1388969051652627,
+            3.0081335509909537
+          ],
+          "resid_var_ci": [
+            2.2010465266077186,
+            2.7620023602008694
+          ],
+          "resid_es_ci": [
+            2.257775559562211,
+            2.962251384679551
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.2948007395035814,
+          "true_es": 2.377666679207187,
+          "param_var_ci": [
+            2.0983456228515425,
+            3.0659969279897434
+          ],
+          "param_es_ci": [
+            2.1575602281971222,
+            3.213553579730496
+          ],
+          "resid_var_ci": [
+            2.1373464007779153,
+            3.0731503528907482
+          ],
+          "resid_es_ci": [
+            2.187391448316421,
+            3.2936117710121025
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.9062536766190967,
+          "true_es": 3.0111993644012074,
+          "param_var_ci": [
+            2.5650825522692373,
+            3.4526436768642244
+          ],
+          "param_es_ci": [
+            2.6329294153882183,
+            3.653406075859966
+          ],
+          "resid_var_ci": [
+            2.494523667915407,
+            3.3557879649463667
+          ],
+          "resid_es_ci": [
+            2.5540032212035166,
+            3.554341673496848
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.7451439008412986,
+          "true_es": 1.8081615680277372,
+          "param_var_ci": [
+            1.6355759177436782,
+            2.6329716000052055
+          ],
+          "param_es_ci": [
+            1.6749722432163456,
+            2.7416996186212583
+          ],
+          "resid_var_ci": [
+            1.6449132755881433,
+            2.3931756678793374
+          ],
+          "resid_es_ci": [
+            1.6746632199206388,
+            2.5009654019792613
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.0019917965831526,
+          "true_es": 3.1103946164550824,
+          "param_var_ci": [
+            1.9645847333525104,
+            2.986131556360255
+          ],
+          "param_es_ci": [
+            2.0306652711528907,
+            3.1749236116012836
+          ],
+          "resid_var_ci": [
+            1.9115954160284505,
+            3.164705598144221
+          ],
+          "resid_es_ci": [
+            1.9551626031658387,
+            3.4183329087112457
+          ],
+          "param_var_hit": false,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.864774932047682,
+          "true_es": 4.004333108482795,
+          "param_var_ci": [
+            2.0002438652752423,
+            3.9597223808506663
+          ],
+          "param_es_ci": [
+            2.0512152097630536,
+            4.239183369126923
+          ],
+          "resid_var_ci": [
+            1.8483161752549244,
+            3.8088814935683537
+          ],
+          "resid_es_ci": [
+            1.9157593381072227,
+            4.062113111388214
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": false,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.9714192425806998,
+          "true_es": 2.042607779900746,
+          "param_var_ci": [
+            1.6757165531109819,
+            2.170666275369539
+          ],
+          "param_es_ci": [
+            1.7120112530593672,
+            2.2515864295088397
+          ],
+          "resid_var_ci": [
+            1.7265425561303356,
+            2.128591932729435
+          ],
+          "resid_es_ci": [
+            1.7555461159156966,
+            2.253176422729474
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 8.013959348099728,
+          "true_es": 8.303345812333847,
+          "param_var_ci": [
+            6.953613133463706,
+            9.608085232885363
+          ],
+          "param_es_ci": [
+            7.135419669219197,
+            10.280198381219503
+          ],
+          "resid_var_ci": [
+            7.4345752505030775,
+            9.594645571075151
+          ],
+          "resid_es_ci": [
+            7.743869177380745,
+            10.279766386159066
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.8232558872565803,
+          "true_es": 2.925204500089894,
+          "param_var_ci": [
+            1.8812329345790024,
+            2.8867618719892376
+          ],
+          "param_es_ci": [
+            1.8967263635531098,
+            2.95974403797244
+          ],
+          "resid_var_ci": [
+            1.500276726124578,
+            2.8982949536380183
+          ],
+          "resid_es_ci": [
+            1.5101733506205046,
+            2.9774132683856247
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.633525920036018,
+          "true_es": 2.728623327118428,
+          "param_var_ci": [
+            1.5630824082085242,
+            2.7674077723226076
+          ],
+          "param_es_ci": [
+            1.5812576874670865,
+            2.8552400937401847
+          ],
+          "resid_var_ci": [
+            1.639901545221729,
+            2.7833382238451625
+          ],
+          "resid_es_ci": [
+            1.6636765145761359,
+            2.876465450641221
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.901846571904412,
+          "true_es": 4.042743416320671,
+          "param_var_ci": [
+            2.0735860799503714,
+            6.0683920869795
+          ],
+          "param_es_ci": [
+            2.1413164310111736,
+            6.487794560457654
+          ],
+          "resid_var_ci": [
+            2.831246149553411,
+            6.361881010045799
+          ],
+          "resid_es_ci": [
+            2.922106889325852,
+            6.617129427458022
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.049446914135855,
+          "true_es": 2.1234530539670895,
+          "param_var_ci": [
+            1.649299540697134,
+            2.5447195645562033
+          ],
+          "param_es_ci": [
+            1.6960134650396492,
+            2.6320510907371353
+          ],
+          "resid_var_ci": [
+            1.6847789499519645,
+            2.4742037161855723
+          ],
+          "resid_es_ci": [
+            1.7131831505456545,
+            2.5659062945638387
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.1197208918143944,
+          "true_es": 2.1962646459564477,
+          "param_var_ci": [
+            1.7917098926577035,
+            2.4970670190506197
+          ],
+          "param_es_ci": [
+            1.8378301456475132,
+            2.7022864834649227
+          ],
+          "resid_var_ci": [
+            1.826257974259767,
+            2.5774436237265452
+          ],
+          "resid_es_ci": [
+            1.8610697432584191,
+            2.7644730004490508
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.9993684673829588,
+          "true_es": 2.071566259553484,
+          "param_var_ci": [
+            1.6044665197536392,
+            1.9668143098594406
+          ],
+          "param_es_ci": [
+            1.622228431202141,
+            2.020546465645303
+          ],
+          "resid_var_ci": [
+            1.5653837454078001,
+            1.9368796253992506
+          ],
+          "resid_es_ci": [
+            1.5835916767207645,
+            1.9919836596314233
+          ],
+          "param_var_hit": false,
+          "param_es_hit": false,
+          "resid_var_hit": false,
+          "resid_es_hit": false
+        }
+      ]
+    },
+    "1000": {
+      "summary": {
+        "n_paths": 40,
+        "n_converged": 40,
+        "n_failed": 0,
+        "parametric_var_coverage": 0.975,
+        "parametric_es_coverage": 0.975,
+        "residual_var_coverage": 0.975,
+        "residual_es_coverage": 0.975
+      },
+      "raw": [
+        {
+          "converged": true,
+          "true_var": 2.774601121729515,
+          "true_es": 2.874792796456154,
+          "param_var_ci": [
+            2.6247775899917487,
+            3.2368052242668908
+          ],
+          "param_es_ci": [
+            2.6876217912630973,
+            3.3677461226782963
+          ],
+          "resid_var_ci": [
+            2.532273434737453,
+            3.171490696549759
+          ],
+          "resid_es_ci": [
+            2.597676593831444,
+            3.2629710497740003
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.84911445731269,
+          "true_es": 2.951996830829537,
+          "param_var_ci": [
+            2.688692431893423,
+            3.5536578180959077
+          ],
+          "param_es_ci": [
+            2.7881828851511306,
+            3.849232092160961
+          ],
+          "resid_var_ci": [
+            2.6497866868039535,
+            3.5356309891331423
+          ],
+          "resid_es_ci": [
+            2.7624064534154606,
+            3.7882887730395014
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.9045524437722734,
+          "true_es": 4.045546998029385,
+          "param_var_ci": [
+            3.650614432559989,
+            4.471844216317334
+          ],
+          "param_es_ci": [
+            3.8241905212989655,
+            4.750504500736002
+          ],
+          "resid_var_ci": [
+            3.6285061811162582,
+            4.499194950459623
+          ],
+          "resid_es_ci": [
+            3.7399550434126954,
+            4.789926571180828
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.0217040733714695,
+          "true_es": 2.0947084109414384,
+          "param_var_ci": [
+            1.8569284020283598,
+            2.2115996277847514
+          ],
+          "param_es_ci": [
+            1.8921213066895257,
+            2.2799044669419377
+          ],
+          "resid_var_ci": [
+            1.8164945023640664,
+            2.2145616034848716
+          ],
+          "resid_es_ci": [
+            1.8440278952457942,
+            2.292482720601705
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.5347186023040038,
+          "true_es": 1.5901377491481155,
+          "param_var_ci": [
+            1.3915098379430137,
+            1.9430605371363288
+          ],
+          "param_es_ci": [
+            1.411192466548804,
+            1.9951855476470925
+          ],
+          "resid_var_ci": [
+            1.34320405236769,
+            1.9321511873322261
+          ],
+          "resid_es_ci": [
+            1.3649666437981633,
+            1.9902078877404072
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.6917909962332587,
+          "true_es": 2.788992372609329,
+          "param_var_ci": [
+            2.4128144874370956,
+            2.878361518110048
+          ],
+          "param_es_ci": [
+            2.475331427043661,
+            2.998386042016533
+          ],
+          "resid_var_ci": [
+            2.4493282281899855,
+            2.8790958803458615
+          ],
+          "resid_es_ci": [
+            2.514894395045906,
+            3.005381065752486
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.089614830758711,
+          "true_es": 2.1650714460493568,
+          "param_var_ci": [
+            1.9932219764864538,
+            2.5424444829695636
+          ],
+          "param_es_ci": [
+            2.0632750272061973,
+            2.675319641477813
+          ],
+          "resid_var_ci": [
+            1.9932001710324507,
+            2.5641059817321934
+          ],
+          "resid_es_ci": [
+            2.0523848444283104,
+            2.7118130838201093
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.687409538689127,
+          "true_es": 1.7483424008244906,
+          "param_var_ci": [
+            1.414017784871128,
+            1.9365459082897631
+          ],
+          "param_es_ci": [
+            1.4454558309964998,
+            2.015585816491695
+          ],
+          "resid_var_ci": [
+            1.428041409927786,
+            1.9251641246126292
+          ],
+          "resid_es_ci": [
+            1.4655138225903974,
+            1.9918253496219929
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.759835058279733,
+          "true_es": 2.859493526047517,
+          "param_var_ci": [
+            2.5339403752004954,
+            3.1135338791432874
+          ],
+          "param_es_ci": [
+            2.577450374571478,
+            3.2350775668331244
+          ],
+          "resid_var_ci": [
+            2.4977342063519106,
+            3.131679805547714
+          ],
+          "resid_es_ci": [
+            2.5547658494238674,
+            3.2330060180239992
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.649228518658772,
+          "true_es": 1.7087826527637695,
+          "param_var_ci": [
+            1.490354649782715,
+            1.8973490818334164
+          ],
+          "param_es_ci": [
+            1.541347932928016,
+            1.994646737283954
+          ],
+          "resid_var_ci": [
+            1.4974964155516373,
+            1.8619379676590224
+          ],
+          "resid_es_ci": [
+            1.5468348004232795,
+            1.9373987214296262
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.1162347787657456,
+          "true_es": 3.2287629468259245,
+          "param_var_ci": [
+            2.523372518859913,
+            3.338022831127503
+          ],
+          "param_es_ci": [
+            2.584104861202397,
+            3.52107286334598
+          ],
+          "resid_var_ci": [
+            2.5487544504391653,
+            3.3069926085219024
+          ],
+          "resid_es_ci": [
+            2.6115042381764804,
+            3.450882649131814
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.554361077420968,
+          "true_es": 3.6827101169066894,
+          "param_var_ci": [
+            2.5010380832884476,
+            3.78497942529719
+          ],
+          "param_es_ci": [
+            2.5734360664210003,
+            3.945062900215977
+          ],
+          "resid_var_ci": [
+            2.6331280389890237,
+            3.686202201850987
+          ],
+          "resid_es_ci": [
+            2.720827332342981,
+            3.8454725779325716
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.0044406328487385,
+          "true_es": 2.0768215824282787,
+          "param_var_ci": [
+            1.8736856902064858,
+            2.297634511316558
+          ],
+          "param_es_ci": [
+            1.9218490984354204,
+            2.4079371268154697
+          ],
+          "resid_var_ci": [
+            1.8333488445650918,
+            2.190259958435882
+          ],
+          "resid_es_ci": [
+            1.8821631237584044,
+            2.2799651575570916
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.5353469213428372,
+          "true_es": 2.6268990554759144,
+          "param_var_ci": [
+            2.045167210037964,
+            2.760124843665815
+          ],
+          "param_es_ci": [
+            2.0944965012021335,
+            2.9303234503650817
+          ],
+          "resid_var_ci": [
+            2.0002243900790417,
+            2.770472360566475
+          ],
+          "resid_es_ci": [
+            2.0625072793277215,
+            2.888712635593917
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.7292413899708592,
+          "true_es": 1.7916848127428522,
+          "param_var_ci": [
+            1.4922550023473518,
+            1.8950136229781738
+          ],
+          "param_es_ci": [
+            1.5295067269334397,
+            1.9749742115873756
+          ],
+          "resid_var_ci": [
+            1.5000772558788242,
+            1.8972877500290293
+          ],
+          "resid_es_ci": [
+            1.5320891182528311,
+            1.9790901112053692
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.1509448010540937,
+          "true_es": 2.2286160598791582,
+          "param_var_ci": [
+            1.784975049329641,
+            2.1961442400736186
+          ],
+          "param_es_ci": [
+            1.802140751713882,
+            2.245561352863463
+          ],
+          "resid_var_ci": [
+            1.8076776502818077,
+            2.2657476014918143
+          ],
+          "resid_es_ci": [
+            1.8466230631141838,
+            2.3227796486054855
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.7455530544482143,
+          "true_es": 1.8085854962935313,
+          "param_var_ci": [
+            1.555472974941028,
+            1.9430017923466032
+          ],
+          "param_es_ci": [
+            1.589830407320592,
+            2.0220467586183384
+          ],
+          "resid_var_ci": [
+            1.5870723659422432,
+            1.8937760963292083
+          ],
+          "resid_es_ci": [
+            1.6228844212781017,
+            1.9553144942297944
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.7543988510204325,
+          "true_es": 1.8177507172204508,
+          "param_var_ci": [
+            1.5324324526711022,
+            1.9231381356174493
+          ],
+          "param_es_ci": [
+            1.5560620333747248,
+            1.9771215997368619
+          ],
+          "resid_var_ci": [
+            1.5519292947120682,
+            1.892086941296012
+          ],
+          "resid_es_ci": [
+            1.5882264189707964,
+            1.9672816406399765
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.9002710387700597,
+          "true_es": 1.968890393212699,
+          "param_var_ci": [
+            1.6324794572367958,
+            2.0498488700881765
+          ],
+          "param_es_ci": [
+            1.655848862737805,
+            2.1255360719795884
+          ],
+          "resid_var_ci": [
+            1.6158177439810726,
+            2.036137764509468
+          ],
+          "resid_es_ci": [
+            1.6364103952468678,
+            2.126634118336267
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.0609830114114125,
+          "true_es": 2.1354057231588026,
+          "param_var_ci": [
+            1.7910878961106738,
+            2.0670752125737435
+          ],
+          "param_es_ci": [
+            1.8198664341358,
+            2.1368932401484955
+          ],
+          "resid_var_ci": [
+            1.7775849541604305,
+            2.104535659699803
+          ],
+          "resid_es_ci": [
+            1.8109413750771635,
+            2.190815301017552
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.9427856113704083,
+          "true_es": 3.0490504782212047,
+          "param_var_ci": [
+            2.1903725006233508,
+            3.4194543668859665
+          ],
+          "param_es_ci": [
+            2.254247972131102,
+            3.599515829666376
+          ],
+          "resid_var_ci": [
+            2.3048546958312413,
+            3.520473131787086
+          ],
+          "resid_es_ci": [
+            2.370667187929693,
+            3.731521210010963
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.4563822831898656,
+          "true_es": 1.5089726821673026,
+          "param_var_ci": [
+            1.1980129529099184,
+            1.6291111739242001
+          ],
+          "param_es_ci": [
+            1.2222463600863218,
+            1.6749429908706948
+          ],
+          "resid_var_ci": [
+            1.1840188955993551,
+            1.6163726169222492
+          ],
+          "resid_es_ci": [
+            1.2037834279829516,
+            1.6688326450811015
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.385434398703792,
+          "true_es": 2.4715731468953477,
+          "param_var_ci": [
+            1.9734790012923924,
+            2.5535638357760213
+          ],
+          "param_es_ci": [
+            2.0138961798185515,
+            2.6772428369478236
+          ],
+          "resid_var_ci": [
+            1.967579046021302,
+            2.4880757592208353
+          ],
+          "resid_es_ci": [
+            2.0408921037450205,
+            2.6015486176400016
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.0802873142742673,
+          "true_es": 2.1554071101603878,
+          "param_var_ci": [
+            1.854228518145989,
+            2.5316133036822657
+          ],
+          "param_es_ci": [
+            1.9043679599584962,
+            2.655476338152737
+          ],
+          "resid_var_ci": [
+            1.8960194377156823,
+            2.5088490357188404
+          ],
+          "resid_es_ci": [
+            1.9454498541446759,
+            2.6597250300943953
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.0115638320044575,
+          "true_es": 2.084202002431792,
+          "param_var_ci": [
+            2.0276366895758513,
+            2.601906605308364
+          ],
+          "param_es_ci": [
+            2.087903128344263,
+            2.725191192645453
+          ],
+          "resid_var_ci": [
+            1.9670503769447023,
+            2.5962726995653536
+          ],
+          "resid_es_ci": [
+            2.011913876005088,
+            2.7189114860283046
+          ],
+          "param_var_hit": false,
+          "param_es_hit": false,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.9279531015909157,
+          "true_es": 1.9975720635851377,
+          "param_var_ci": [
+            1.7823421980201473,
+            2.1177243582394762
+          ],
+          "param_es_ci": [
+            1.8126634381807916,
+            2.181357814701643
+          ],
+          "resid_var_ci": [
+            1.748313746469543,
+            2.1624017940173834
+          ],
+          "resid_es_ci": [
+            1.7764918569805759,
+            2.2238993705260492
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.8727949594806654,
+          "true_es": 2.9765324429994497,
+          "param_var_ci": [
+            2.6257167722223316,
+            3.236001120735093
+          ],
+          "param_es_ci": [
+            2.6975590074624627,
+            3.443150034859066
+          ],
+          "resid_var_ci": [
+            2.677066671795967,
+            3.238386837092807
+          ],
+          "resid_es_ci": [
+            2.745070740370077,
+            3.3994728181981397
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.1715108289738088,
+          "true_es": 2.249924733206033,
+          "param_var_ci": [
+            2.094595521613758,
+            2.6283713612805237
+          ],
+          "param_es_ci": [
+            2.1507116859325603,
+            2.7476169933799817
+          ],
+          "resid_var_ci": [
+            2.0593655413885017,
+            2.6054923169029207
+          ],
+          "resid_es_ci": [
+            2.122624032992148,
+            2.734855620311649
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.9325707145251003,
+          "true_es": 2.0023564199007375,
+          "param_var_ci": [
+            1.8470610802500762,
+            2.2681203225946986
+          ],
+          "param_es_ci": [
+            1.8949605192902998,
+            2.356658126367276
+          ],
+          "resid_var_ci": [
+            1.8707080698736727,
+            2.1818697125059088
+          ],
+          "resid_es_ci": [
+            1.9103847203432163,
+            2.273868402338243
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.511606491622505,
+          "true_es": 2.602301351751841,
+          "param_var_ci": [
+            2.0955814521484406,
+            2.6343586050802243
+          ],
+          "param_es_ci": [
+            2.146142164645675,
+            2.7343754007847743
+          ],
+          "resid_var_ci": [
+            2.1352303790141978,
+            2.621377063623616
+          ],
+          "resid_es_ci": [
+            2.184486480941649,
+            2.73154869987884
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.8185771783886162,
+          "true_es": 1.884246543147189,
+          "param_var_ci": [
+            1.7216131979223335,
+            2.1508741017716733
+          ],
+          "param_es_ci": [
+            1.7628652301793872,
+            2.238225991610981
+          ],
+          "resid_var_ci": [
+            1.6957438922249375,
+            2.130280149869282
+          ],
+          "resid_es_ci": [
+            1.7396766621479494,
+            2.2386937222013668
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.8484946361835526,
+          "true_es": 2.951354627774409,
+          "param_var_ci": [
+            2.6170240768352198,
+            3.3584998763068623
+          ],
+          "param_es_ci": [
+            2.7316475075376796,
+            3.6157781328216707
+          ],
+          "resid_var_ci": [
+            2.6069398754837563,
+            3.2611168418071808
+          ],
+          "resid_es_ci": [
+            2.7277600248752996,
+            3.487111045863725
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.5980249319196447,
+          "true_es": 1.655730089223175,
+          "param_var_ci": [
+            1.5683208913431976,
+            1.9870084244985926
+          ],
+          "param_es_ci": [
+            1.6145464230660183,
+            2.0880047616304953
+          ],
+          "resid_var_ci": [
+            1.615772312996353,
+            1.9924391896423854
+          ],
+          "resid_es_ci": [
+            1.6631907048333654,
+            2.08850227617186
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": false,
+          "resid_es_hit": false
+        },
+        {
+          "converged": true,
+          "true_var": 1.825057379850699,
+          "true_es": 1.8909607466184144,
+          "param_var_ci": [
+            1.6793721245418456,
+            2.1866181756931153
+          ],
+          "param_es_ci": [
+            1.7306540857289765,
+            2.306818046903085
+          ],
+          "resid_var_ci": [
+            1.7041925099012005,
+            2.094570237549611
+          ],
+          "resid_es_ci": [
+            1.7593516920434933,
+            2.1906689027922024
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.6348740871453216,
+          "true_es": 1.6939098784435573,
+          "param_var_ci": [
+            1.39409471448654,
+            1.7141010846482199
+          ],
+          "param_es_ci": [
+            1.4192717064225393,
+            1.7577929839886162
+          ],
+          "resid_var_ci": [
+            1.4003285526229157,
+            1.7725867797115202
+          ],
+          "resid_es_ci": [
+            1.4221043135940845,
+            1.8185516038203722
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.115685674531425,
+          "true_es": 2.192083715772874,
+          "param_var_ci": [
+            1.8220346653216835,
+            2.152860530857629
+          ],
+          "param_es_ci": [
+            1.848722528201491,
+            2.2253727996042008
+          ],
+          "resid_var_ci": [
+            1.7413698388383412,
+            2.1578432483124654
+          ],
+          "resid_es_ci": [
+            1.7803031994811078,
+            2.227933591842598
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.6261464380488857,
+          "true_es": 1.6848670713330383,
+          "param_var_ci": [
+            1.552204470002428,
+            2.0244743650667267
+          ],
+          "param_es_ci": [
+            1.6018528666890957,
+            2.114884600764255
+          ],
+          "resid_var_ci": [
+            1.5638676050159954,
+            2.0873364880656364
+          ],
+          "resid_es_ci": [
+            1.614110589942624,
+            2.1749279798932157
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.8460376684273743,
+          "true_es": 1.9126986396782286,
+          "param_var_ci": [
+            1.6486573921367338,
+            2.010428512671676
+          ],
+          "param_es_ci": [
+            1.6889359162259798,
+            2.08459907932822
+          ],
+          "resid_var_ci": [
+            1.6049418795606867,
+            1.99670522143466
+          ],
+          "resid_es_ci": [
+            1.6465471825076168,
+            2.0831438072281183
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.6627308839492332,
+          "true_es": 1.7227725924953383,
+          "param_var_ci": [
+            1.5370294513772795,
+            1.9201138507600046
+          ],
+          "param_es_ci": [
+            1.5644513796845942,
+            2.0354433403775767
+          ],
+          "resid_var_ci": [
+            1.524416847346947,
+            1.932322175324076
+          ],
+          "resid_es_ci": [
+            1.5515442856594137,
+            2.0243236693249522
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.1555656899831583,
+          "true_es": 2.2334038104867915,
+          "param_var_ci": [
+            1.905354450295224,
+            2.2445883234037853
+          ],
+          "param_es_ci": [
+            1.9484708274472917,
+            2.349483797723033
+          ],
+          "resid_var_ci": [
+            1.9084918791879424,
+            2.225723108119473
+          ],
+          "resid_es_ci": [
+            1.9434227432021343,
+            2.323189949539013
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        }
+      ]
+    },
+    "2500": {
+      "summary": {
+        "n_paths": 40,
+        "n_converged": 40,
+        "n_failed": 0,
+        "parametric_var_coverage": 0.925,
+        "parametric_es_coverage": 0.9,
+        "residual_var_coverage": 0.95,
+        "residual_es_coverage": 0.95
+      },
+      "raw": [
+        {
+          "converged": true,
+          "true_var": 2.15921764923174,
+          "true_es": 2.2371876430739523,
+          "param_var_ci": [
+            2.014192384724512,
+            2.3032623715896228
+          ],
+          "param_es_ci": [
+            2.064079810955832,
+            2.385202433648873
+          ],
+          "resid_var_ci": [
+            2.011489021004566,
+            2.29109706661237
+          ],
+          "resid_es_ci": [
+            2.0629243641719857,
+            2.3652932320172018
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.7492408437414726,
+          "true_es": 1.8124064527589776,
+          "param_var_ci": [
+            1.7933618111779974,
+            2.0926285021417947
+          ],
+          "param_es_ci": [
+            1.8734547087422224,
+            2.225847225754094
+          ],
+          "resid_var_ci": [
+            1.795590969116942,
+            2.137126469544742
+          ],
+          "resid_es_ci": [
+            1.871904390236642,
+            2.2768553351608847
+          ],
+          "param_var_hit": false,
+          "param_es_hit": false,
+          "resid_var_hit": false,
+          "resid_es_hit": false
+        },
+        {
+          "converged": true,
+          "true_var": 2.050066545199342,
+          "true_es": 2.12409506009324,
+          "param_var_ci": [
+            2.039156902061134,
+            2.2764775984067627
+          ],
+          "param_es_ci": [
+            2.1159707411914206,
+            2.412110669848174
+          ],
+          "resid_var_ci": [
+            2.0179360372035378,
+            2.279699218948009
+          ],
+          "resid_es_ci": [
+            2.098529838174244,
+            2.412960554977976
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.301876655220536,
+          "true_es": 2.384998108352848,
+          "param_var_ci": [
+            2.181238920899356,
+            2.493307064548129
+          ],
+          "param_es_ci": [
+            2.2461581990861843,
+            2.6030943945829934
+          ],
+          "resid_var_ci": [
+            2.178832337859828,
+            2.539842859924913
+          ],
+          "resid_es_ci": [
+            2.2381361998229137,
+            2.6537098321031567
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.327716628674837,
+          "true_es": 2.41177117096184,
+          "param_var_ci": [
+            2.1028515550679905,
+            2.332995402796345
+          ],
+          "param_es_ci": [
+            2.152731702902338,
+            2.4066305765600817
+          ],
+          "resid_var_ci": [
+            2.0851948055621765,
+            2.336836790728491
+          ],
+          "resid_es_ci": [
+            2.123998106306081,
+            2.410140461085135
+          ],
+          "param_var_hit": true,
+          "param_es_hit": false,
+          "resid_var_hit": true,
+          "resid_es_hit": false
+        },
+        {
+          "converged": true,
+          "true_var": 2.8795862493716933,
+          "true_es": 2.9835689683956486,
+          "param_var_ci": [
+            2.6430872416002913,
+            3.066254401257265
+          ],
+          "param_es_ci": [
+            2.75028398546713,
+            3.22398366576085
+          ],
+          "resid_var_ci": [
+            2.613124183360337,
+            3.0753334915234296
+          ],
+          "resid_es_ci": [
+            2.7133617184441787,
+            3.254078503976986
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.4498387995697533,
+          "true_es": 2.5383032099013514,
+          "param_var_ci": [
+            2.3781105780663694,
+            2.651836259180176
+          ],
+          "param_es_ci": [
+            2.45220807741596,
+            2.780236965770609
+          ],
+          "resid_var_ci": [
+            2.3696748943593398,
+            2.6188149221162
+          ],
+          "resid_es_ci": [
+            2.440126461198456,
+            2.739074605923626
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.8386340769201297,
+          "true_es": 1.9050277022716786,
+          "param_var_ci": [
+            1.745283755156513,
+            2.026762118631561
+          ],
+          "param_es_ci": [
+            1.8012587351005591,
+            2.13178290323126
+          ],
+          "resid_var_ci": [
+            1.7613091311983071,
+            1.9813910646653168
+          ],
+          "resid_es_ci": [
+            1.8191316889951705,
+            2.0822596800872897
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.03234601471002,
+          "true_es": 3.1418449344592725,
+          "param_var_ci": [
+            2.951594663082676,
+            3.32375746052621
+          ],
+          "param_es_ci": [
+            3.035649040862988,
+            3.458934313350843
+          ],
+          "resid_var_ci": [
+            2.9534297106970437,
+            3.3070695079830186
+          ],
+          "resid_es_ci": [
+            3.0316405955578545,
+            3.4464664144375092
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.7697724364929734,
+          "true_es": 1.8336794474534346,
+          "param_var_ci": [
+            1.606637824256462,
+            1.8963377364793572
+          ],
+          "param_es_ci": [
+            1.6635117314297756,
+            1.9810967659401868
+          ],
+          "resid_var_ci": [
+            1.6044024159842376,
+            1.8584482479395905
+          ],
+          "resid_es_ci": [
+            1.6538678879452124,
+            1.9332571973194674
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.052275973248638,
+          "true_es": 2.126384271248912,
+          "param_var_ci": [
+            1.8833869998733221,
+            2.087845332428963
+          ],
+          "param_es_ci": [
+            1.9381046114246292,
+            2.1716160573193712
+          ],
+          "resid_var_ci": [
+            1.87271518072729,
+            2.125983877921246
+          ],
+          "resid_es_ci": [
+            1.9234184930207132,
+            2.2194451228246965
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.5880436704240104,
+          "true_es": 3.7176089983973566,
+          "param_var_ci": [
+            3.554057343298511,
+            4.008337564316853
+          ],
+          "param_es_ci": [
+            3.657515957770304,
+            4.184154747119057
+          ],
+          "resid_var_ci": [
+            3.51590362587083,
+            3.9884791299876485
+          ],
+          "resid_es_ci": [
+            3.6315978345416853,
+            4.1548925269507135
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.7773294605376528,
+          "true_es": 1.8415093578921462,
+          "param_var_ci": [
+            1.63577358821053,
+            1.8617614952518644
+          ],
+          "param_es_ci": [
+            1.6784452828774206,
+            1.9537326431925606
+          ],
+          "resid_var_ci": [
+            1.630723429956503,
+            1.8358097076682551
+          ],
+          "resid_es_ci": [
+            1.669228124331914,
+            1.9089451871437464
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.308400215856593,
+          "true_es": 2.3917572367107622,
+          "param_var_ci": [
+            2.128615125958269,
+            2.4137115792559145
+          ],
+          "param_es_ci": [
+            2.1893313084586956,
+            2.523261841491755
+          ],
+          "resid_var_ci": [
+            2.1441538326590024,
+            2.413203241376662
+          ],
+          "resid_es_ci": [
+            2.203508227682617,
+            2.524958130501494
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.121748018473136,
+          "true_es": 3.2344752712648557,
+          "param_var_ci": [
+            2.7572286409980684,
+            3.2493038856292493
+          ],
+          "param_es_ci": [
+            2.848607917146136,
+            3.3865951162462755
+          ],
+          "resid_var_ci": [
+            2.67521229606554,
+            3.2663278786833105
+          ],
+          "resid_es_ci": [
+            2.7509955779420623,
+            3.4195772328491194
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.662754600241472,
+          "true_es": 3.7950177621918084,
+          "param_var_ci": [
+            3.237607474684978,
+            3.7381232875995294
+          ],
+          "param_es_ci": [
+            3.307291018030599,
+            3.8606298440618967
+          ],
+          "resid_var_ci": [
+            3.274644798829519,
+            3.846445637382484
+          ],
+          "resid_es_ci": [
+            3.3552398315898575,
+            3.9750207226556693
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.15083494631283,
+          "true_es": 3.2646125367513155,
+          "param_var_ci": [
+            2.7781326425352515,
+            3.192102847956697
+          ],
+          "param_es_ci": [
+            2.8528844119155607,
+            3.311120205144039
+          ],
+          "resid_var_ci": [
+            2.818920485301146,
+            3.17650122353729
+          ],
+          "resid_es_ci": [
+            2.891732486503823,
+            3.2925033823961845
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 4.2381696128641195,
+          "true_es": 4.39121118268217,
+          "param_var_ci": [
+            4.045643642698306,
+            4.671334491886102
+          ],
+          "param_es_ci": [
+            4.15292943968503,
+            4.853030636070382
+          ],
+          "resid_var_ci": [
+            3.981825914738008,
+            4.664225925150346
+          ],
+          "resid_es_ci": [
+            4.089932659333151,
+            4.856713301356919
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.8096113431507628,
+          "true_es": 2.9110672474235066,
+          "param_var_ci": [
+            2.4404414803365087,
+            2.8037627216751284
+          ],
+          "param_es_ci": [
+            2.519443371276595,
+            2.906417698334035
+          ],
+          "resid_var_ci": [
+            2.4145094443467103,
+            2.8079134181766174
+          ],
+          "resid_es_ci": [
+            2.4831524786972112,
+            2.9365459022324174
+          ],
+          "param_var_hit": false,
+          "param_es_hit": false,
+          "resid_var_hit": false,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.912357619210051,
+          "true_es": 1.9814134236802339,
+          "param_var_ci": [
+            1.7694322571867065,
+            2.0963557738324816
+          ],
+          "param_es_ci": [
+            1.814676157022932,
+            2.168560684755628
+          ],
+          "resid_var_ci": [
+            1.7690444186389893,
+            2.0322958642319056
+          ],
+          "resid_es_ci": [
+            1.8224370256313822,
+            2.0988147066243323
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.1345072127240132,
+          "true_es": 2.2115849053278436,
+          "param_var_ci": [
+            1.9791600071544715,
+            2.2422636320029175
+          ],
+          "param_es_ci": [
+            2.0480253646217106,
+            2.3545056910796163
+          ],
+          "resid_var_ci": [
+            1.969086630689201,
+            2.2372725024644455
+          ],
+          "resid_es_ci": [
+            2.0288261865376236,
+            2.341083108517146
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 3.2697409524157557,
+          "true_es": 3.38781227422817,
+          "param_var_ci": [
+            3.0935462341610522,
+            3.6431325708197755
+          ],
+          "param_es_ci": [
+            3.1934938651681297,
+            3.8345459686408367
+          ],
+          "resid_var_ci": [
+            3.1149835828038723,
+            3.619756049938405
+          ],
+          "resid_es_ci": [
+            3.2180215473819436,
+            3.8134829560380785
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.7760444285792045,
+          "true_es": 1.840177923046095,
+          "param_var_ci": [
+            1.6792273615759232,
+            1.877177047040456
+          ],
+          "param_es_ci": [
+            1.732001015205809,
+            1.9424733877205527
+          ],
+          "resid_var_ci": [
+            1.6568154352931737,
+            1.871992442041183
+          ],
+          "resid_es_ci": [
+            1.6950106668105622,
+            1.9499884014095366
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.4247113256196324,
+          "true_es": 2.5122683753663178,
+          "param_var_ci": [
+            2.402622454113135,
+            2.745090026078926
+          ],
+          "param_es_ci": [
+            2.4907268129212077,
+            2.9020215585823466
+          ],
+          "resid_var_ci": [
+            2.377616367050207,
+            2.7549916814198334
+          ],
+          "resid_es_ci": [
+            2.4704705954065176,
+            2.9387105450312427
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.036582917150259,
+          "true_es": 2.1101245342104287,
+          "param_var_ci": [
+            1.9623350600512637,
+            2.337256935251241
+          ],
+          "param_es_ci": [
+            2.0236155346576625,
+            2.464209602015946
+          ],
+          "resid_var_ci": [
+            1.9963435178180007,
+            2.272767150737852
+          ],
+          "resid_es_ci": [
+            2.065230425707264,
+            2.391533348012668
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.122509470159953,
+          "true_es": 2.199153920698458,
+          "param_var_ci": [
+            2.066666415708491,
+            2.315561693202926
+          ],
+          "param_es_ci": [
+            2.124734271454516,
+            2.4114126301373626
+          ],
+          "resid_var_ci": [
+            2.070552605126299,
+            2.3361849345795997
+          ],
+          "resid_es_ci": [
+            2.1270683445035425,
+            2.4451030847469646
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.0322902190481975,
+          "true_es": 2.105676825498527,
+          "param_var_ci": [
+            1.9905371497056892,
+            2.221159976047531
+          ],
+          "param_es_ci": [
+            2.058170858968123,
+            2.314076109197533
+          ],
+          "resid_var_ci": [
+            1.9807980555999425,
+            2.2522022503857864
+          ],
+          "resid_es_ci": [
+            2.0460233597932955,
+            2.360852569982393
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.1234990747056695,
+          "true_es": 2.200179260159718,
+          "param_var_ci": [
+            2.0521562631720016,
+            2.338039419100521
+          ],
+          "param_es_ci": [
+            2.1091591004533425,
+            2.4510088539591446
+          ],
+          "resid_var_ci": [
+            2.072990055019435,
+            2.3410976647844213
+          ],
+          "resid_es_ci": [
+            2.127269193656751,
+            2.4514022809350053
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.9056935002160265,
+          "true_es": 1.9745086613600897,
+          "param_var_ci": [
+            1.842139345149575,
+            2.1226170670361117
+          ],
+          "param_es_ci": [
+            1.9007165725799475,
+            2.210579974175877
+          ],
+          "resid_var_ci": [
+            1.8691160983145583,
+            2.090174476388209
+          ],
+          "resid_es_ci": [
+            1.9245578570756678,
+            2.189925852388123
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.675181022807529,
+          "true_es": 2.7717826080851045,
+          "param_var_ci": [
+            2.2103841474195813,
+            2.6291139203459224
+          ],
+          "param_es_ci": [
+            2.2743256738123345,
+            2.7131520868662653
+          ],
+          "resid_var_ci": [
+            2.2117976100987913,
+            2.688099942961102
+          ],
+          "resid_es_ci": [
+            2.267227343444835,
+            2.774850935409555
+          ],
+          "param_var_hit": false,
+          "param_es_hit": false,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.110752429185725,
+          "true_es": 2.186972329465163,
+          "param_var_ci": [
+            1.9729477605699406,
+            2.195997523146681
+          ],
+          "param_es_ci": [
+            2.035212948140116,
+            2.2920748801646527
+          ],
+          "resid_var_ci": [
+            1.942694778533515,
+            2.17571643264912
+          ],
+          "resid_es_ci": [
+            1.9965554658638247,
+            2.268156828480774
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.916253661442053,
+          "true_es": 1.9854501531602058,
+          "param_var_ci": [
+            1.7861828452929036,
+            2.010091374209766
+          ],
+          "param_es_ci": [
+            1.8434552695496387,
+            2.1075297614649497
+          ],
+          "resid_var_ci": [
+            1.8168341429464943,
+            2.05083335330363
+          ],
+          "resid_es_ci": [
+            1.8812849224877124,
+            2.159713919443892
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.789884441827601,
+          "true_es": 1.854517703304148,
+          "param_var_ci": [
+            1.6823994737065582,
+            1.9006983442189458
+          ],
+          "param_es_ci": [
+            1.736048639453634,
+            1.9808319108103125
+          ],
+          "resid_var_ci": [
+            1.6647408833095534,
+            1.9267686038328995
+          ],
+          "resid_es_ci": [
+            1.7048155387801265,
+            2.0035530292714117
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.514981814967138,
+          "true_es": 2.605798559029986,
+          "param_var_ci": [
+            2.4594939242315945,
+            2.820788600301201
+          ],
+          "param_es_ci": [
+            2.535004887894066,
+            2.9636435265133887
+          ],
+          "resid_var_ci": [
+            2.40999689782342,
+            2.8655992800671535
+          ],
+          "resid_es_ci": [
+            2.494408899437028,
+            3.005736718255526
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.25618100485572,
+          "true_es": 2.337652374413165,
+          "param_var_ci": [
+            2.115833354224186,
+            2.4325410073922207
+          ],
+          "param_es_ci": [
+            2.192762978379805,
+            2.5498475234628843
+          ],
+          "resid_var_ci": [
+            2.1521387915218577,
+            2.4450034239528464
+          ],
+          "resid_es_ci": [
+            2.216933102104897,
+            2.559740581056467
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 1.5845282339878768,
+          "true_es": 1.6417460215003143,
+          "param_var_ci": [
+            1.48340038457932,
+            1.7177074535671042
+          ],
+          "param_es_ci": [
+            1.5206381159290983,
+            1.7681389067355398
+          ],
+          "resid_var_ci": [
+            1.4810006232531119,
+            1.732408067247318
+          ],
+          "resid_es_ci": [
+            1.5201990811946893,
+            1.7960366906990033
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.7659679978946046,
+          "true_es": 2.86584792794257,
+          "param_var_ci": [
+            2.710622448833896,
+            3.119284059259578
+          ],
+          "param_es_ci": [
+            2.8169493465906923,
+            3.2783997062498567
+          ],
+          "resid_var_ci": [
+            2.6492178537228797,
+            3.143758428845205
+          ],
+          "resid_es_ci": [
+            2.7451395441605637,
+            3.2817932773546756
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.220174298911327,
+          "true_es": 2.300345455569085,
+          "param_var_ci": [
+            2.035556819132198,
+            2.2572331717980476
+          ],
+          "param_es_ci": [
+            2.0889039334707036,
+            2.3415907197175723
+          ],
+          "resid_var_ci": [
+            2.073737706964864,
+            2.2652768943009316
+          ],
+          "resid_es_ci": [
+            2.128505597101542,
+            2.357574530152801
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.25113947968739,
+          "true_es": 2.3324287982661067,
+          "param_var_ci": [
+            2.0351776839889957,
+            2.3795943855399204
+          ],
+          "param_es_ci": [
+            2.0997843479528084,
+            2.4749602108530766
+          ],
+          "resid_var_ci": [
+            1.9939762975451973,
+            2.346095369676221
+          ],
+          "resid_es_ci": [
+            2.049051654964651,
+            2.4512204381764575
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        },
+        {
+          "converged": true,
+          "true_var": 2.0659915262467377,
+          "true_es": 2.1405950969598777,
+          "param_var_ci": [
+            1.9096876175664486,
+            2.1239079984467026
+          ],
+          "param_es_ci": [
+            1.9601655317714144,
+            2.2014157704282487
+          ],
+          "resid_var_ci": [
+            1.900741634777108,
+            2.1755828941898865
+          ],
+          "resid_es_ci": [
+            1.9531810141997672,
+            2.2656359651565676
+          ],
+          "param_var_hit": true,
+          "param_es_hit": true,
+          "resid_var_hit": true,
+          "resid_es_hit": true
+        }
+      ]
+    }
+  }
+}
