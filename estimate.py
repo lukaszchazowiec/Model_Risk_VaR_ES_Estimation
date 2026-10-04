@@ -12,21 +12,25 @@ def fit_garch_t(returns: np.ndarray) -> dict:
 
     :rtype: dict
     """
-    model = arch_model(returns, mean="Zero", vol="GARCH", p=1, q=1, dist="t")
-    fit_result = model.fit(disp="off")
+    scale_factor = 100.0
+    returns_scaled = returns * scale_factor
+
+    model = arch_model(returns_scaled, mean="Zero", vol="GARCH", p=1, q=1, dist="t")
+    fit_result = model.fit(disp="off", options={"maxiter": 1000})
     forecast = fit_result.forecast(horizon=1)
-    sigma2_next = forecast.variance.values[-1, 0]
+
+    sigma2_next = forecast.variance.values[-1, 0] / (scale_factor ** 2)
 
     converged = fit_result.convergence_flag == 0
 
     return {"alpha": fit_result.params["alpha[1]"],
             "beta": fit_result.params["beta[1]"],
-            "omega": fit_result.params["omega"],
+            "omega": fit_result.params["omega"] / (scale_factor ** 2),
             "nu": fit_result.params["nu"],
             "sigma2_next": sigma2_next,
             "std_resid": fit_result.std_resid,
             "converged": converged,
-    }
+            }
 
 
 def conditional_sigma2_next(returns: np.ndarray, alpha: float, beta: float, omega: float) -> float:
@@ -50,4 +54,3 @@ def var_es_from_params(sigma2_next: float, nu: float, cfg: Config) -> dict:
     es = sigma_next * scale * (t_dist.pdf(t_a_es, df=nu) / a_es) * ((nu + t_a_es ** 2) / (nu - 1))
 
     return {"var": float(var), "es": float(es)}
-

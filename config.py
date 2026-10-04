@@ -28,7 +28,7 @@ class Config:
     seed: int = 42              # random seed
     target_var: float = 1.0     # variance in the simulation
     R: int = 500                # number of paths
-    B: int = 999                # number of bootstrap samples
+    B: int = 499                # number of bootstrap samples
     burn_in: int = 500          # extra observations to discard
     sample_sizes: tuple[int, ...] = (500, 1000, 2500)
 
