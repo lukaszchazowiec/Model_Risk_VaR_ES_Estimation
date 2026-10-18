@@ -6,7 +6,7 @@
     "seed": 42,
     "target_var": 1.0,
     "R": 500,
-    "B": 399,
+    "B": 499,
     "burn_in": 500,
     "sample_sizes": [
       500,
@@ -18,26 +18,26 @@
     "ci_level": 0.95,
     "omega": 0.020000000000000018
   },
-  "R": 300,
+  "R": 500,
   "seed": 42,
   "results": {
     "500": {
-      "parametric var coverage": 0.8966666666666666,
-      "parametric es coverage": 0.8833333333333333,
-      "residual var coverage": 0.88,
-      "residual es coverage": 0.87
+      "parametric var coverage": 0.894,
+      "parametric es coverage": 0.89,
+      "residual var coverage": 0.896,
+      "residual es coverage": 0.892
     },
     "1000": {
-      "parametric var coverage": 0.9166666666666666,
-      "parametric es coverage": 0.93,
-      "residual var coverage": 0.93,
-      "residual es coverage": 0.9333333333333333
+      "parametric var coverage": 0.936,
+      "parametric es coverage": 0.934,
+      "residual var coverage": 0.936,
+      "residual es coverage": 0.938
     },
     "2500": {
-      "parametric var coverage": 0.94,
+      "parametric var coverage": 0.93,
       "parametric es coverage": 0.93,
-      "residual var coverage": 0.9366666666666666,
-      "residual es coverage": 0.9433333333333334
+      "residual var coverage": 0.924,
+      "residual es coverage": 0.928
     }
   }
 }

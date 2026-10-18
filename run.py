@@ -10,8 +10,8 @@ warnings.filterwarnings("ignore")
 
 if __name__ == "__main__":
     cfg = Config()
-    run_cfg = replace(cfg, B=399)
-    R = 300
+    run_cfg = replace(cfg, B=499)
+    R = 500
     seed = 42
 
     all_results = {}
