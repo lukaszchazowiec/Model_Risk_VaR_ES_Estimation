@@ -1,8 +1,8 @@
 import json
+import sys
 from scipy.stats import binomtest
 
-import sys
-with open(sys.argv[1]) as f:
+with open(sys.argv[1] if len(sys.argv) > 1 else "coverage_results.json") as f:
     data = json.load(f)
 
 R = data["R"]
@@ -12,12 +12,13 @@ print(f"R={R}, nominal coverage={nominal}\n")
 
 for N_str, result in data["results"].items():
     summary = result["summary"] if "summary" in result else result
-    print(f"--- N={N_str} ---")
+    n = summary.get("n_valid", R)
+    print(f"--- N={N_str} (n_valid={n}) ---")
     for key, coverage in summary.items():
-        if "coverage" not in key:
+        if not key.endswith("coverage"):
             continue
-        hits = round(coverage * R)
-        test = binomtest(hits, R, p=nominal, alternative="two-sided")
+        hits = round(coverage * n)
+        test = binomtest(hits, n, p=nominal, alternative="two-sided")
         flag = " <-- significant" if test.pvalue < 0.05 else ""
-        print(f"  {key}: {coverage:.4f} ({hits}/{R}), p-value={test.pvalue:.4f}{flag}")
+        print(f"  {key}: {coverage:.4f} ({hits}/{n}), p-value={test.pvalue:.4f}{flag}")
     print()
