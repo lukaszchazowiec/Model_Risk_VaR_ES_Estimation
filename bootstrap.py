@@ -105,6 +105,64 @@ def residual_bootstrap(returns: np.ndarray, fit_result: dict, N: int, cfg: Confi
     }
 
 
+def bayesian_bootstrap(returns: np.ndarray, fit_result: dict, N: int, cfg: Config, seed: int) -> dict:
+    """
+    Like residual_bootstrap, but each replicate first draws weights
+    w ~ Dirichlet(1,...,1) over the residuals and samples innovations with
+    probabilities w. The weighted pool is standardized (weighted mean 0,
+    weighted variance 1) so that the simulated series always has persistence
+    alpha+beta, no matter how the weights fall.
+    """
+
+    seed_seq = np.random.SeedSequence(seed)
+    child_seeds = seed_seq.spawn(cfg.B)
+
+    resid = fit_result["std_resid"]
+
+    var_samples = []
+    es_samples = []
+    n_failed = 0
+
+    for i in range(cfg.B):
+        rng = np.random.default_rng(child_seeds[i])
+
+        weights = rng.dirichlet(np.ones(len(resid)))
+        m = np.sum(weights * resid)
+        v = np.sum(weights * (resid - m) ** 2)
+        pool = (resid - m) / np.sqrt(v)
+        z_star = rng.choice(pool, size=N + cfg.burn_in, replace=True, p=weights)
+
+        synthetic = simulate_garch_t(cfg, N=N, seed=child_seeds[i],
+                                     alpha=fit_result["alpha"],
+                                     beta=fit_result["beta"],
+                                     omega=fit_result["omega"],
+                                     nu=fit_result["nu"],
+                                     z=z_star)
+        new_fit = fit_garch_t(synthetic["returns"])
+
+        if not new_fit["converged"]:
+            n_failed += 1
+            continue
+
+        sigma2_cond = conditional_sigma2_next(returns, new_fit["alpha"], new_fit["beta"], new_fit["omega"])
+        replicate_var_es = var_es_estimate(sigma2_cond, new_fit, cfg)
+        var_samples.append(replicate_var_es["var"])
+        es_samples.append(replicate_var_es["es"])
+
+    var_samples = np.array(var_samples)
+    es_samples = np.array(es_samples)
+
+    lower_pct = (1 - cfg.ci_level) / 2 * 100
+    upper_pct = (1 - (1 - cfg.ci_level) / 2) * 100
+
+    return {
+        "var_ci": np.percentile(var_samples, [lower_pct, upper_pct]),
+        "es_ci": np.percentile(es_samples, [lower_pct, upper_pct]),
+        "var_samples": var_samples,
+        "es_samples": es_samples,
+        "n_failed": n_failed,
+    }
+
 
 if __name__ == "__main__":
     cfg = Config()
