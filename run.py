@@ -1,4 +1,5 @@
 import json
+import sys
 import time
 import warnings
 from dataclasses import replace
@@ -9,33 +10,31 @@ from coverage import coverage_metrics
 warnings.filterwarnings("ignore")
 
 if __name__ == "__main__":
+    seed = int(sys.argv[1])
+    sizes = [int(x) for x in sys.argv[2:]]
+
     cfg = Config()
     run_cfg = replace(cfg, B=499)
     R = 500
-    seed = 42
 
-    all_results = {}
+    print(f"=== Monte Carlo (seed={seed}, R={R}, B={run_cfg.B}, N={sizes}) ===", flush=True)
 
-    print(f"=== Starting Monte Carlo Experiment (R={R}, B={run_cfg.B}) ===", flush=True)
-
-    for N in cfg.sample_sizes:
-        print(f"\n[+] Running for N={N}...", flush=True)
+    for N in sizes:
+        print(f"\n[+] N={N}...", flush=True)
         start = time.time()
 
         metrics = coverage_metrics(N, run_cfg, seed=seed, R=R)
 
-        elapsed = time.time() - start
-        print(f"  -> Finished N={N} in {elapsed:.2f}s", flush=True)
-
-        all_results[N] = metrics
+        print(f"  -> N={N} done in {time.time() - start:.2f}s", flush=True)
+        print(f"  -> Summary: {metrics}", flush=True)
 
         output = {
             "config": run_cfg.to_dict(),
             "R": R,
             "seed": seed,
-            "results": all_results,
+            "results": {N: metrics},
         }
-        with open("coverage_results.json", "w") as f:
+        filename = f"coverage_results_N{N}_seed{seed}.json"
+        with open(filename, "w") as f:
             json.dump(output, f, indent=2)
-        print(f"  -> Saved progress for N={N} to coverage_results.json", flush=True)
-        print(f"  -> Summary: {metrics}", flush=True)
+        print(f"  -> Saved to {filename}", flush=True)

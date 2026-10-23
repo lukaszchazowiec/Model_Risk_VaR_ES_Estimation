@@ -1,7 +1,8 @@
 import json
 from scipy.stats import binomtest
 
-with open("coverage_results.json") as f:
+import sys
+with open(sys.argv[1]) as f:
     data = json.load(f)
 
 R = data["R"]
