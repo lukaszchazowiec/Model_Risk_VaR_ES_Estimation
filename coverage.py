@@ -45,6 +45,8 @@ def coverage_metrics(N: int, cfg: Config, seed: int, R: int,
                     paths[f"{name} {mode} {k}"].append([int(low < true_values[k] < high),
                                                         float(high - low),
                                                         float((high - low) / true_values[k])])
+        if (r + 1) % 10 == 0:
+            print(f"  path {r + 1}/{R}", flush=True)
 
     summary = {"n_valid": n_valid}
     for key, rows in paths.items():
