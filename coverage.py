@@ -2,55 +2,53 @@ import numpy as np
 
 from config import Config
 from dataclasses import replace
-from bootstrap import parametric_bootstrap, residual_bootstrap
+from bootstrap import parametric_bootstrap, residual_bootstrap, bayesian_bootstrap
 from simulate import simulate_garch_t, true_var_es
 from estimate import fit_garch_t
 
 
-def coverage_metrics(N: int, cfg: Config, seed: int, R: int):
+def coverage_metrics(N: int, cfg: Config, seed: int, R: int,
+                     modes=("theoretical", "empirical")):
 
     seed_seq = np.random.SeedSequence(seed)
     path_seeds = seed_seq.spawn(R)
 
-    param_hits_var = 0
-    param_hits_es = 0
-    resid_hits_var = 0
-    resid_hits_es = 0
+    methods = {"parametric": parametric_bootstrap,
+               "residual": residual_bootstrap,
+               "bayesian": bayesian_bootstrap}
+
+    # dla każdej ścieżki: [trafienie, szerokość, szerokość względna]
+    paths = {f"{m} {mode} {k}": [] for m in methods for mode in modes for k in ("var", "es")}
+    n_valid = 0
 
     for r in range(R):
-        path_seed_int = path_seeds[r].generate_state(1)[0]
+        path_seed_int = int(path_seeds[r].generate_state(1)[0])
         sim_result = simulate_garch_t(cfg, N=N, seed=path_seed_int)
         fit_result = fit_garch_t(sim_result["returns"])
 
         if not fit_result["converged"]:
             continue
+        n_valid += 1
         true_values = true_var_es(sim_result["sigma2_next"], cfg)
 
-        # PARAMETRIC VAR/ES COVERAGE
-        param_boot = parametric_bootstrap(sim_result["returns"], fit_result, N=N, cfg=cfg, seed=path_seed_int)
-        param_low_var, param_high_var = param_boot["var_ci"]
+        for name, boot_fn in methods.items():
+            for mode in modes:
+                boot = boot_fn(sim_result["returns"], fit_result, N=N,
+                               cfg=replace(cfg, quantile_mode=mode), seed=path_seed_int)
+                for k in ("var", "es"):
+                    low, high = boot[f"{k}_ci"]
+                    paths[f"{name} {mode} {k}"].append([int(low < true_values[k] < high),
+                                                        float(high - low),
+                                                        float((high - low) / true_values[k])])
 
-        if param_low_var < true_values["var"] < param_high_var:
-            param_hits_var += 1
+    summary = {"n_valid": n_valid}
+    for key, rows in paths.items():
+        a = np.array(rows)
+        summary[f"{key} coverage"] = float(a[:, 0].mean())
+        summary[f"{key} mean width"] = float(a[:, 1].mean())
+        summary[f"{key} mean rel width"] = float(a[:, 2].mean())
 
-        param_low_es, param_high_es = param_boot["es_ci"]
-        if param_low_es < true_values["es"] < param_high_es:
-            param_hits_es += 1
-
-        # RESIDUAL VAR/ES COVERAGE
-        resid_boot = residual_bootstrap(sim_result["returns"], fit_result, N=N, cfg=cfg, seed=path_seed_int)
-        resid_low_var, resid_high_var = resid_boot["var_ci"]
-
-        if resid_low_var < true_values["var"] < resid_high_var:
-            resid_hits_var += 1
-
-        resid_low_es, resid_high_es = resid_boot["es_ci"]
-        if resid_low_es < true_values["es"] < resid_high_es:
-            resid_hits_es += 1
-
-
-    return {"parametric var coverage": param_hits_var / R, "parametric es coverage": param_hits_es / R,
-            "residual var coverage": resid_hits_var / R, "residual es coverage": resid_hits_es / R}
+    return {"summary": summary, "paths": paths}
 
 
 if __name__ == "__main__":
