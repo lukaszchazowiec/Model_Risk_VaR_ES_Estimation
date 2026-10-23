@@ -1,13 +1,11 @@
 import argparse
 import json
 import time
-import warnings
 from dataclasses import replace
 
 from config import Config
 from coverage import coverage_metrics
 
-warnings.filterwarnings("ignore")
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()

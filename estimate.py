@@ -12,7 +12,7 @@ def fit_garch_t(returns: np.ndarray) -> dict:
 
     :rtype: dict
     """
-    scale_factor = 100.0
+    scale_factor = 1.0
     returns_scaled = returns * scale_factor
 
     model = arch_model(returns_scaled, mean="Zero", vol="GARCH", p=1, q=1, dist="t")
