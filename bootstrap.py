@@ -2,7 +2,7 @@ import numpy as np
 
 from config import Config
 from simulate import simulate_garch_t
-from estimate import fit_garch_t, var_es_from_params, conditional_sigma2_next
+from estimate import fit_garch_t, var_es_from_params, conditional_sigma2_next, var_es_estimate
 
 
 def parametric_bootstrap(returns: np.ndarray, fit_result: dict, N: int, cfg: Config, seed: int) -> dict:
@@ -36,7 +36,7 @@ def parametric_bootstrap(returns: np.ndarray, fit_result: dict, N: int, cfg: Con
             continue
 
         sigma2_cond = conditional_sigma2_next(returns, new_fit["alpha"], new_fit["beta"], new_fit["omega"])
-        replicate_var_es = var_es_from_params(sigma2_cond, new_fit["nu"], cfg)
+        replicate_var_es = var_es_estimate(sigma2_cond, new_fit, cfg)
         var_samples.append(replicate_var_es["var"])
         es_samples.append(replicate_var_es["es"])
 
@@ -83,7 +83,7 @@ def residual_bootstrap(returns: np.ndarray, fit_result: dict, N: int, cfg: Confi
             continue
 
         sigma2_cond = conditional_sigma2_next(returns, new_fit["alpha"], new_fit["beta"], new_fit["omega"])
-        replicate_var_es = var_es_from_params(sigma2_cond, new_fit["nu"], cfg)
+        replicate_var_es = var_es_estimate(sigma2_cond, new_fit, cfg)
         var_samples.append(replicate_var_es["var"])
         es_samples.append(replicate_var_es["es"])
 

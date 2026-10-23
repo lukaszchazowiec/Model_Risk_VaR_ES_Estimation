@@ -36,6 +36,7 @@ class Config:
     var_level: float = 0.99     # VaR and ES values according to BASEL II and BASEL III regulations
     es_level: float = 0.975
     ci_level: float = 0.95      # confidence interval level
+    quantile_mode: str = "theoretical"   # "theoretical" or "empirical"
 
 
     # -----safety checks-----
@@ -53,6 +54,8 @@ class Config:
             (not 0 < self.ci_level < 1, "ci_level must be strictly between 0 and 1"),
             (len(self.sample_sizes) == 0 or min(self.sample_sizes) <= 0, "sample_sizes must be a non-empty tuple"
                                                                          "of positive integers"),
+            (self.quantile_mode not in ("theoretical", "empirical"),
+             "quantile_mode must be 'theoretical' or 'empirical'"),
         ]
         for rule, message in rules:
             if rule:

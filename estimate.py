@@ -54,3 +54,21 @@ def var_es_from_params(sigma2_next: float, nu: float, cfg: Config) -> dict:
     es = sigma_next * scale * (t_dist.pdf(t_a_es, df=nu) / a_es) * ((nu + t_a_es ** 2) / (nu - 1))
 
     return {"var": float(var), "es": float(es)}
+
+
+def var_es_from_resid(sigma2_next: float, std_resid: np.ndarray, cfg: Config) -> dict:
+    sigma_next = math.sqrt(sigma2_next)
+    z = np.asarray(std_resid, dtype=float)
+    z = z[np.isfinite(z)]
+
+    q_var = np.quantile(z, 1 - cfg.var_level)
+    q_es = np.quantile(z, 1 - cfg.es_level)
+
+    return {"var": float(-q_var * sigma_next),
+            "es": float(-z[z <= q_es].mean() * sigma_next)}
+
+
+def var_es_estimate(sigma2_next: float, fit: dict, cfg: Config) -> dict:
+    if cfg.quantile_mode == "empirical":
+        return var_es_from_resid(sigma2_next, fit["std_resid"], cfg)
+    return var_es_from_params(sigma2_next, fit["nu"], cfg)
