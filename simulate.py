@@ -1,3 +1,5 @@
+from scipy.special import gammaln
+from scipy.stats import t as t_dist
 import math
 import numpy as np
 
@@ -52,6 +54,46 @@ def simulate_garch_t(cfg: Config, N: int, seed: int,
 
 def true_var_es(sigma2_next: float, cfg: Config) -> dict:
     return var_es_from_params(sigma2_next, cfg.nu, cfg)
+
+
+def _skewt_consts(nu: float, lam: float):
+    c = math.exp(gammaln((nu + 1) / 2) - gammaln(nu / 2)) / math.sqrt(math.pi * (nu - 2))
+    a = 4 * lam * c * (nu - 2) / (nu - 1)
+    b = math.sqrt(1 + 3 * lam ** 2 - a ** 2)
+    s = math.sqrt(nu / (nu - 2))
+    return a, b, s
+
+
+def skewt_ppf(u, nu: float, lam: float) -> np.ndarray:
+    """Quantile function of Hansen's skewed t (zero mean, unit variance)."""
+    u = np.atleast_1d(np.asarray(u, dtype=float))
+    a, b, s = _skewt_consts(nu, lam)
+    left = u < (1 - lam) / 2
+    z = np.empty_like(u)
+    z[left] = ((1 - lam) / s * t_dist.ppf(u[left] / (1 - lam), df=nu) - a) / b
+    z[~left] = ((1 + lam) / s * t_dist.ppf((u[~left] - (1 - lam) / 2) / (1 + lam) + 0.5, df=nu) - a) / b
+    return z
+
+
+def skewt_rvs(size: int, nu: float, lam: float, rng: np.random.Generator) -> np.ndarray:
+    u = np.clip(rng.uniform(size=size), 1e-12, 1 - 1e-12)
+    return skewt_ppf(u, nu, lam)
+
+
+def skewt_var_es_unit(nu: float, lam: float, var_level: float, es_level: float):
+    """VaR and ES (positive losses) of a unit-variance skew-t innovation."""
+    a, b, s = _skewt_consts(nu, lam)
+    alpha_es = 1 - es_level
+    var = -float(skewt_ppf([1 - var_level], nu, lam)[0])
+    q = t_dist.ppf(alpha_es / (1 - lam), df=nu)
+    es = (((1 - lam) ** 2 / s) * t_dist.pdf(q, df=nu) * (nu + q ** 2) / (nu - 1) + a * alpha_es) / (b * alpha_es)
+    return var, float(es)
+
+
+def skewt_true_var_es(sigma2_next: float, nu: float, lam: float, cfg: Config) -> dict:
+    var_u, es_u = skewt_var_es_unit(nu, lam, cfg.var_level, cfg.es_level)
+    sigma = math.sqrt(sigma2_next)
+    return {"var": sigma * var_u, "es": sigma * es_u}
 
 
 if __name__ == "__main__":

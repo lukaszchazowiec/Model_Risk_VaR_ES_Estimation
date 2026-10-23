@@ -3,12 +3,12 @@ import numpy as np
 from config import Config
 from dataclasses import replace
 from bootstrap import parametric_bootstrap, residual_bootstrap, bayesian_bootstrap
-from simulate import simulate_garch_t, true_var_es
+from simulate import simulate_garch_t, true_var_es, skewt_rvs, skewt_true_var_es
 from estimate import fit_garch_t
 
 
 def coverage_metrics(N: int, cfg: Config, seed: int, R: int,
-                     modes=("theoretical", "empirical")):
+                     modes=("theoretical", "empirical"), dgp: str = "t", lam: float = 0.0):
 
     seed_seq = np.random.SeedSequence(seed)
     path_seeds = seed_seq.spawn(R)
@@ -23,13 +23,18 @@ def coverage_metrics(N: int, cfg: Config, seed: int, R: int,
 
     for r in range(R):
         path_seed_int = int(path_seeds[r].generate_state(1)[0])
-        sim_result = simulate_garch_t(cfg, N=N, seed=path_seed_int)
+        if dgp == "skewt":
+            z = skewt_rvs(cfg.burn_in + N, cfg.nu, lam, np.random.default_rng(path_seed_int))
+            sim_result = simulate_garch_t(cfg, N=N, seed=path_seed_int, z=z)
+            true_values = skewt_true_var_es(sim_result["sigma2_next"], cfg.nu, lam, cfg)
+        else:
+            sim_result = simulate_garch_t(cfg, N=N, seed=path_seed_int)
+            true_values = true_var_es(sim_result["sigma2_next"], cfg)
         fit_result = fit_garch_t(sim_result["returns"])
 
         if not fit_result["converged"]:
             continue
         n_valid += 1
-        true_values = true_var_es(sim_result["sigma2_next"], cfg)
 
         for name, boot_fn in methods.items():
             for mode in modes:
