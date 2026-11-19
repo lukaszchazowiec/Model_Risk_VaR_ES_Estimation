@@ -1,0 +1,39 @@
+Plik N=4000 wygląda dobrze: n_valid wynosi 300 z 300, czyli wszystkie dopasowania się zbiegły. Policzyłem testy dwumianowe względem 0,95 dla tego przebiegu (seed 43, R=300, B=299, baza):
+
+metoda	kwantyl	VaR coverage (p)	ES coverage (p)
+parametryczna	teoretyczny	0,917 (0,016)	0,920 (0,023)
+rezydualna	teoretyczny	0,917 (0,016)	0,910 (0,003)
+bayesowska	teoretyczny	0,920 (0,023)	0,940 (0,42)
+parametryczna	empiryczny	0,983 (0,005)	0,963 (0,35)
+rezydualna	empiryczny	0,933 (0,18)	0,933 (0,18)
+bayesowska	empiryczny	0,980 (0,012)	0,960 (0,51)
+Co z tego wynika
+
+1. Przy kwantylu teoretycznym niedoszacowanie nie znika nawet przy N=4000. Pięć z sześciu komórek jest istotnie poniżej 95%. Razem z N=2500 (0,924–0,93 przy R=500) wygląda to na plateau na poziomie ok. 0,92–0,93, a nie na zbieganie do 0,95. To wzmacnia wyjaśnienie (a) z wniosku 3 w README: resztkowe niedoszacowanie jest realne i znika bardzo powoli, co pasuje do czwartego momentu blisko granicy. Zastrzeżenie: to jeden seed i R=300 (błąd standardowy ok. 1,6 pkt proc.), a pozostałe N bloku A jeszcze musisz zobaczyć.
+
+2. Kwantyl empiryczny usuwa niedoszacowanie, ale kosztuje szerokość. Szerokość względna VaR rośnie z ok. 0,113 do 0,169 w metodzie parametrycznej i rezydualnej (ok. 49% szerzej) i do 0,21 w bayesowskiej (ok. 77% szerzej).
+
+3. Metody parametryczna i bayesowska z kwantylem empirycznym lekko przestrzeliwują (VaR 0,98, istotnie powyżej 0,95), czyli przedziały są zachowawcze. Najbliżej nominału bez przestrzelenia wypada rezydualna z kwantylem empirycznym (0,933, nieodróżnialna od 0,95), ale przy tym samym R nie można stwierdzić, że jest lepsza od pozostałych.
+
+To bardzo konkretna odpowiedź na pytanie prof. Piontka o kwantyl empiryczny: poprawia pokrycie, ale za cenę przedziałów szerszych o połowę lub więcej.
+
+
+Testy dwumianowe względem 0,95 (R=200)
+metoda	kwantyl	VaR	ES
+parametryczna	teoretyczny	0,895 (p=0,002)	0,895 (p=0,002)
+rezydualna	teoretyczny	0,885 (p=0,0002)	0,895 (p=0,002)
+bayesowska	teoretyczny	0,895 (p=0,002)	0,910 (p=0,014)
+parametryczna	empiryczny	0,965 (p=0,42)	0,955 (p=0,87)
+rezydualna	empiryczny	0,945 (p=0,74)	0,925 (p=0,10)
+bayesowska	empiryczny	0,975 (p=0,14)	0,950 (p=1,0)
+Co z tego wynika
+
+1. Niedoszacowanie jest tu silniejsze niż w bazie przy tym samym N. Przy kwantylu teoretycznym coverage wynosi 0,885–0,91, a wszystkie komórki są istotnie poniżej 95%. W bazie przy N=2500 było ok. 0,92–0,93 (seed 42, R=500). Różnica to ok. 3 punkty procentowe.
+
+2. To nie wygląda na efekt grubości ogonów. W tym świecie ν=8, czyli ogony są cieńsze niż w bazie, a warunek czwartego momentu wynosi 0,993, prawie tyle samo co w bazie (0,992). Za to persystencja jest wyższa: α+β=0,99 przy 0,98, więc połowiczny zanik wariancji to ok. 69 dni zamiast 34. Sugeruje to, że to persystencja spowalnia zbieżność, a nie sam czwarty moment. To hipoteza, bo w bloku B zmieniają się naraz α, β i ν, więc nie rozdzielę wpływu poszczególnych parametrów. Różnice w R i B między przebiegami też mają znaczenie, ale nie na tyle, żeby wyjaśnić 3 punkty.
+
+3. Kwantyl empiryczny naprawia sytuację. Wszystkie sześć komórek z trybem empirycznym mieści się w granicach szumu wokół 0,95 (p od 0,10 do 1,0). Cena to szerokość względna VaR: z ok. 0,14 do ok. 0,20 w metodach parametrycznej i rezydualnej (ok. 42–43% szerzej) i do ok. 0,24 w bayesowskiej (ok. 67% szerzej).
+
+4. Przy R=200 błąd standardowy to ok. 1,5–2 pkt proc., więc różnic między metodami nie rozstrzygniesz. Widać tylko duże wzorce, a one są wyraźne.
+
+Wynik drugiej połowy tej komendy (N=500) dojdzie do osobnego pliku. Po zakończeniu komendy dla świata “jak S&P 500” sprawdź n_valid względem R, bo tam widziałeś ostrzeżenia o skali. Zaznacz też sobie, że w README mechanizm z wniosku 5 (czwarty moment) trzeba będzie uzupełnić o persystencję.
